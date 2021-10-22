@@ -10,12 +10,12 @@ export function SendMessageForm() {
 
   async function handleSendMessage(event: FormEvent) {
     event.preventDefault();
+    const text = message;
+    setMessage('');
     if (!message.trim()) {
       return;
     }
-
-    await api.post('/messages', { message });
-    setMessage('');
+    await api.post('/messages', { text });
   }
 
   return (

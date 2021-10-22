@@ -15,7 +15,7 @@ export function SendMessageForm() {
     if (!text.trim()) {
       return;
     }
-    await api.post('/messages', { text });
+    await api.post('/messages', { message: text });
   }
 
   return (

@@ -12,7 +12,7 @@ export function SendMessageForm() {
     event.preventDefault();
     const text = message;
     setMessage('');
-    if (!message.trim()) {
+    if (!text.trim()) {
       return;
     }
     await api.post('/messages', { text });

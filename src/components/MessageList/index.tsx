@@ -16,7 +16,7 @@ interface Message {
 
 const messagesQueue: Message[] = [];
 
-const socket = io('http://localhost:4000');
+const socket = io(String(import.meta.env.VITE_BASE_URL));
 
 socket.on('new_message', (newMessage: Message) => {
   messagesQueue.push(newMessage);
